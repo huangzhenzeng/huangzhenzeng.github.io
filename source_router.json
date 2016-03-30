@@ -1,0 +1,12 @@
+[
+	{
+	    "protocol": "http",
+	    "host": "localhost",
+	    "localRoot": "/Documents/www/",
+	    "localFolder": "guide",
+	    "rules": {
+	        "/guide/index.html": "/guide/index.html",
+	        "/js/": "js/"
+    	}
+	}
+]
