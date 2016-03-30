@@ -1,12 +1,14 @@
 [
 	{
 	    "protocol": "http",
-	    "host": "localhost",
+	    "host": "huangzhenzeng.github.io",
 	    "localRoot": "/Documents/www/",
-	    "localFolder": "guide",
+	    "localFolder": "/guide",
 	    "rules": {
-	        "/guide/index.html": "/guide/index.html",
-	        "/js/": "js/"
+	        "/index.html": "/index.html",
+	        "/js/": "js/",
+	        "/css/": "css/",
+	        "/images/": "images/",
     	}
 	}
 ]
