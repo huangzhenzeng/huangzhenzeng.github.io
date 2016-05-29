@@ -14,6 +14,12 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest('./dist/css'));
 });
 
+// 压缩 public 目录 css
+gulp.task('font', function() {
+    return gulp.src('./font/*.*')
+        .pipe(gulp.dest('./dist/font'));
+});
+
 // 压缩 public 目录 html
 gulp.task('minify-html', function() {
   return gulp.src('./*.html')
@@ -57,5 +63,5 @@ gulp.task('images', function () {
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', [
-    'minify-html','minify-css','lib-js','minify-js','images'
+    'minify-html','minify-css','lib-js','font','minify-js','images'
 ]);
