@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
+var minifycss = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
@@ -24,6 +24,7 @@ gulp.task('font', function() {
 gulp.task('minify-html', function() {
   return gulp.src('./*.html')
     .pipe(htmlclean())
+    
     .pipe(htmlmin({
          removeComments: true,
          minifyJS: true,
@@ -65,3 +66,43 @@ gulp.task('images', function () {
 gulp.task('default', [
     'minify-html','minify-css','lib-js','font','minify-js','images'
 ]);
+
+// 清空图片、样式、js
+gulp.task('clean', function() {
+    gulp.src(['./dist/css', './dist/js', './dist/images'], {read: false})
+        .pipe(clean());
+});
+
+// 监听任务 运行语句 gulp watch
+gulp.task('watch',function(){
+
+    server.listen(port, function(err){
+        if (err) {
+            return console.log(err);
+        }
+
+        // 监听html
+        gulp.watch('./*.html', function(event){
+            gulp.run('minify-html');
+        })
+
+        // 监听css
+        gulp.watch('./css/*.css', function(){
+            gulp.run('minify-css');
+        });
+
+        // 监听images
+        gulp.watch('./images/**/*', function(){
+            gulp.run('images');
+        });
+
+        // 监听js
+        gulp.watch('./js/*.js', function(){
+            gulp.run('minify-js');
+        });
+    });
+
+});
+
+
+
