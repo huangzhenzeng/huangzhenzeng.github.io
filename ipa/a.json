@@ -1,0 +1,14 @@
+[
+	{
+	    "protocol": "http",
+	    "host": "huangzhenzeng.github.io",
+	    "localRoot": "/Documents/www/",
+	    "localFolder": "/guide",
+	    "rules": {
+	        "/index.html": "/index.html",
+	        "/js/": "js/",
+	        "/css/": "css/",
+	        "/images/": "images/",
+    	}
+	}
+]
